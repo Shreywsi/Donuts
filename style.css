@@ -1,3 +1,4 @@
+/* Global Styling */
 body, html {
     margin: 0;
     padding: 0;
@@ -8,6 +9,7 @@ body, html {
     overflow-y: scroll;
 }
 
+/* Pages */
 .page {
     height: 100vh;
     width: 100%;
@@ -15,170 +17,95 @@ body, html {
     justify-content: center;
     align-items: center;
     scroll-snap-align: start;
-}
-
-.page1 {
-    background: radial-gradient(circle, #FFFF00, #F4C430); 
     position: relative;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
+/* Backgrounds */
+.page1 {
+    background: radial-gradient(circle, #FFFF00, #F4C430);
+}
 .page2 {
     background: radial-gradient(circle, #FFC0CB, #FF1493);
-    position: relative;
 }
-
-.page3{
+.page3 {
     background: radial-gradient(circle, #8BAA54, #4C6535);
-    position: relative;
 }
-.page4{
+.page4 {
     background: radial-gradient(circle, #FF0000, #800000);
-    position: relative;
 }
-.page5{
+.page5 {
     background: radial-gradient(circle, #6E2121, #654321);
-    position: relative;
 }
 
+/* Donut Container */
 .donut-container {
     position: relative;
     width: 100%;
     height: 100%;
-}
-
-.DonutsDelights {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     align-items: center;
-    z-index: 0;
-    transition: transform 1s ease;
-}
-
-.text1 {
-    color: #339897; 
-}
-
-.text2 {
-    color: #3CAEAD; 
+    justify-content: center;
     text-align: center;
-    white-space: nowrap; 
 }
 
-.text3 {
-    color: #4EC5C3; 
-    line-height: 1; 
-    text-align: center;
-    white-space: nowrap; 
-}
-
-.text4 {
-    color: #64D4D2; 
-    line-height: 1; 
-    text-align: center;
-    white-space: nowrap; 
-}
-
+/* Text Styling */
 .text1, .text2, .text3, .text4 {
-    line-height: 0.3 ; 
-    font-size: 400px; 
+    line-height: 1.2;
+    font-size: clamp(2rem, 5vw, 4rem); /* Dynamically adjusts size */
+    color: #339897;
+    white-space: nowrap;
+    margin: 0.5rem 0;
 }
 
-.donut-image {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1; 
+/* Universal Image Styling */
+img {
+    width: clamp(200px, 80vw, 90vh); /* Dynamically scales with viewport width/height */
+    height: auto; /* Maintains aspect ratio */
+    max-height: 90%; /* Prevents overflow */
     transition: transform 1s ease, width 1s ease, height 1s ease;
 }
 
-.donut-image img {
-    height: 680px;
-    display: block;
-    transition: transform 1s ease, width 1s ease, height 1s ease;
-}
-
-.frosted-donut-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.frosted-donut {
-    height: 1000px; 
-    width: 1000px;
-    display: block;
-    transition: transform 1s ease, width 1s ease, height 1s ease;
-}
-
-/* Pink Frosted Joy Text */
+/* Sideways Text Styling */
 .sideways-text {
+    font-size: clamp(1rem, 3vw, 2rem); /* Dynamically adjusts size */
+    color: white;
+    transform: rotate(-90deg);
+    margin-top: 1rem;
+    text-align: center;
+}
+
+/* Specific Page Text Styles */
+.page2 .frosted-joy-text,
+.page3 .matcha-madness-text,
+.page4 .red-velvet-text,
+.page5 .choco-delight-text {
     position: absolute;
-    top: 0.5%;
-    left: -18%; 
-    transform: rotate(-90deg) translate(-50%, 0);
-    transform-origin: center;
-    font-family: 'Glass Antiqua', cursive;
-    font-size: 8rem;
+    top: 50%;
+    left: 10%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    font-size: clamp(1.5rem, 5vw, 4rem);
     color: white;
     white-space: nowrap;
     letter-spacing: 2px;
-    text-align: center;
-    display: none; 
 }
 
-.page2 .frosted-joy-text {
-    display: block; 
+/* Media Queries for Smaller Devices */
+@media (max-width: 768px) {
+    .page { padding: 0 10px; }
+
+    .sideways-text {
+        font-size: clamp(1rem, 3vw, 1.5rem); /* Adjusts font size for smaller screens */
+    }
 }
 
-.page3 .matcha-madness-text {
-    display: block; 
-}
-
-.page4 .red-velvet-text {
-    left: -15%; 
-    display: block; 
-}
-
-.choco-delight-text {
-    position: absolute;
-    top: 50%; 
-    left: 8%; 
-    transform: translate(-50%, -50%) rotate(-90deg); 
-    font-size: 6rem; 
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
-}
-
-.choco-delight-container {
-    position: relative; 
-}
-
-.page5 .choco-delight-text {
-    display: block; 
-}
-
-.macha-madness-donut{
-    height: 700px; 
-    width: 700px;
-
-}
-.red-velvet-donut
-{
-    height: 700px; 
-    width: 700px;
-}
-.choco-delight-donut
-{
-    height: 90vh; 
-    width: auto; 
-    max-height: 850px; 
-    max-width: 100%; 
+@media (max-width: 480px) {
+    .text1, .text2, .text3, .text4 {
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
+    }
+    img {
+        width: clamp(150px, 70vw, 500px); /* Ensures images resize properly */
+    }
 }
