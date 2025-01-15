@@ -1,17 +1,41 @@
-// Play click sound when the button is clicked
-function playClickSound() {
-  var sound = new Audio('sounds/clicksound.wav'); // Make sure to have the correct path to the sound file
-  sound.play();
-}
+window.addEventListener('load', () => {
+  const airDropImage = document.querySelector('.AirDrop');
+  const targetPage = document.querySelector('.target-page');
+  const imageContainer = document.querySelector('.image-container');
+  const goBackButton = document.querySelector('button');
+  const audio = new Audio('sounds/apple_airdrop.mp3'); // Path to AirDrop sound
+  
+  // Trigger AirDrop animation and play sound on page load
+  setTimeout(() => {
+    airDropImage.classList.add('animate-airdrop');
+  }, 50);
 
-// Show the target page and hide the main page content
-function showTargetPage() {
-  document.querySelector('.image-container').style.display = 'none'; // Hide the search button
-  document.querySelector('.target-page').style.display = 'block'; // Show the target page
-}
+  airDropImage.addEventListener('animationstart', () => {
+    audio.play();
+  });
 
-// Go back to the main page (index)
-function goBack() {
-  document.querySelector('.image-container').style.display = 'flex'; // Show the search button again
-  document.querySelector('.target-page').style.display = 'none'; // Hide the target page
-}
+  // Show target page with circular transition
+  window.showTargetPage = () => {
+    imageContainer.style.display = 'none'; // Hide the main content
+    targetPage.style.display = 'flex'; // Show the target page
+    setTimeout(() => {
+      targetPage.style.clipPath = 'circle(150% at 50% 50%)'; // Expand circle
+    }, 50);
+  };
+
+  // Go back to main page with circular transition
+  window.goBack = () => {
+    targetPage.style.clipPath = 'circle(0% at 50% 50%)'; // Shrink circle
+    setTimeout(() => {
+      targetPage.style.display = 'none'; // Hide target page
+      imageContainer.style.display = 'flex'; // Show main content
+    }, 500);
+  };
+
+  // Trigger AirDrop animation on button click (optional)
+  goBackButton.addEventListener('click', () => {
+    airDropImage.classList.remove('animate-airdrop'); // Reset animation
+    void airDropImage.offsetWidth; // Trigger reflow
+    airDropImage.classList.add('animate-airdrop'); // Restart animation
+  });
+});

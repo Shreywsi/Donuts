@@ -14,20 +14,16 @@ body {
 
 /* Container for the Drip Image */
 .image-container {
-  position: relative;
+  position: absolute;
   width: 100%;
   height: 100%;
-  background-image: url('donutimages/drip.png'); /* Drip Image */
-  background-position: center;
-  background-size: contain; /* Ensure the image fits within the container */
-  background-repeat: no-repeat; /* Avoid repeating the image */
+  background: url('donutimages/drip.png') center/contain no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 /* Search Button Styles */
@@ -38,8 +34,8 @@ body {
   background: beige;
   border-radius: 25px;
   padding: 1rem 2rem;
-  width: 30vw; /* Scalable width */
-  max-width: 400px; /* Limit width on larger screens */
+  width: 30vw;
+  max-width: 400px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   text-decoration: none;
   font-size: 1.2rem;
@@ -48,7 +44,6 @@ body {
   cursor: pointer;
   transition: transform 0.2s ease-in-out;
   border: none;
-  outline: none;
 }
 
 .search-button:hover {
@@ -61,42 +56,153 @@ body {
   margin-left: 10px;
 }
 
-/* Target Page (Initially hidden) */
+/* Target Page */
 .target-page {
-  background-image: url('donutimages/homepage.png'); /* Replace with your image path */
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
+  background: url('donutimages/homepage.png') center/cover fixed;
   height: 100vh;
   width: 100vw;
-  display: none; /* Initially hide the target page */
+  display: none;
   justify-content: center;
   align-items: center;
   color: #fff;
-  font-family: Arial, sans-serif;
+  clip-path: circle(0% at 50% 50%);
+  transition: clip-path 1.5s ease-out;
+  position: relative;
+}
+
+/* Header Section */
+header {
+  position: absolute;
+  top: 20px;
+  width: 90%;
+  max-width: 1200px;
+  border-radius: 20px;
+  padding: 10px 0;
+  background-color: beige;
+  text-align: right;
+  margin: 0 5%;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+header nav ul {
+  list-style: none;
+  padding: 0;
   margin: 0;
-  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+header nav ul li {
+  margin: 0 20px;
+}
+
+header nav ul li a {
+  color: rgb(66, 31, 7);
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+header nav ul li a:hover {
+  color: #fcd02f;
+  text-decoration: underline;
+}
+
+/* AirDrop Image Styles */
+.AirDrop {
+  position: absolute;
+  right: 3%;
+  top: 10%;
+  width: 30vw;
+  max-width: 350px;
+  height: auto;
+  border-radius: 20px;
+  z-index: 2;
+  opacity: 0;
+  animation: slideIn 1s forwards;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 /* Target Page Content */
-.target-page h1 {
-  color: white;
-  font-size: 24px;
-}
-
-/* Button Styles for "Go Back" */
-button {
+.target-page button {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
   padding: 10px 20px;
   font-size: 16px;
   font-weight: bold;
-  background-color: white;
+  background-color: beige;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: 20px;
   transition: background-color 0.3s ease;
 }
 
-button:hover {
+.target-page button:hover {
   background-color: #f0f0f0;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .search-button {
+    width: 80vw;
+    font-size: 1rem;
+  }
+
+  header nav ul li {
+    margin: 0 15px;
+  }
+
+  header nav ul li a {
+    font-size: 16px;
+  }
+
+  .AirDrop {
+    width: 40vw;
+    right: 5%;
+    top: 20%;
+  }
+
+  .target-page button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-button {
+    width: 90vw;
+    font-size: 0.9rem;
+  }
+
+  header nav ul li {
+    margin: 0 10px;
+  }
+
+  header nav ul li a {
+    font-size: 14px;
+  }
+
+  .AirDrop {
+    width: 30vw;
+    right: 3%;
+    top: 10%;
+  }
+
+  .target-page button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
 }
