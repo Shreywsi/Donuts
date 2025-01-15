@@ -60,7 +60,7 @@ body, html {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    z-index: 0;
+    z-index: 0; /* Ensures the text is behind the image */
     transition: transform 1s ease;
 }
 
@@ -89,18 +89,18 @@ body, html {
 
 /* Responsive Font Size */
 .text1, .text2, .text3, .text4 {
-    font-size: clamp(4rem, 15vw, 12rem); /* Larger font size for emphasis */
+    font-size: clamp(6rem, 20vw, 18rem); /* Larger font size for emphasis */
     line-height: 1.2; /* Adjust line-height */
     font-family: 'Glass Antiqua', sans-serif; /* Optional: A stylish font for visibility */
     text-transform: uppercase; /* Makes the text uppercase */
     position: absolute; /* Stacks all text elements in the same space */
     white-space: nowrap; /* Prevents wrapping */
+    z-index: 0; /* Ensures the text stays behind the image */
 }
-
 
 /* Universal Image Styling */
 img {
-    width: clamp(200px, 80vw, 90vh); /* Dynamically scales with viewport width/height */
+    width: clamp(300px, 60vw, 700px); /* Dynamically scales with viewport width/height */
     height: auto; /* Maintains aspect ratio */
     max-height: 90%; /* Prevents overflow */
     transition: transform 1s ease, width 1s ease, height 1s ease;
@@ -111,6 +111,7 @@ img {
     width: clamp(300px, 60vw, 600px); /* Dynamically adjusts image size */
     height: auto; /* Maintains aspect ratio */
 }
+
 /* Sideways Text Styling */
 .sideways-text {
     font-size: clamp(1rem, 3vw, 2rem); /* Dynamically adjusts size */
@@ -138,7 +139,7 @@ img {
 /* Media Queries for Smaller Devices */
 @media (max-width: 768px) {
     .text1, .text2, .text3, .text4 {
-        font-size: clamp(1.5rem, 6vw, 4rem); /* Adjust font size for smaller screens */
+        font-size: clamp(3rem, 10vw, 8rem); /* Adjust font size for smaller screens */
     }
 
     .sideways-text {
@@ -148,7 +149,7 @@ img {
 
 @media (max-width: 480px) {
     .text1, .text2, .text3, .text4 {
-        font-size: clamp(1rem, 5vw, 3rem); /* Smaller font size for mobile */
+        font-size: clamp(2rem, 8vw, 6rem); /* Smaller font size for mobile */
     }
     img {
         width: clamp(150px, 70vw, 500px); /* Ensures images resize properly */
