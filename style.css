@@ -1,178 +1,113 @@
-/* General Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* Global Styling */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
+  background-color: #dddbd4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
 }
 
-/* Header */
-header {
-  background-color: #ff7f50;
-  color: white;
-  padding: 10px 0;
-  position: fixed;
-  width: 100%;
+/* Home Page */
+#homepage {
+  position: absolute;
   top: 0;
   left: 0;
-  z-index: 1000; /* Keeps the header above all other content */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a shadow for separation */
+  width: 100%;
+  height: 100%;
+  background-image: url('donutimages/homepage.png');
+  background-position: center center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  transform: scale(2.5);
+  z-index: -1;
 }
 
-header .logo {
-  display: inline-block;
-  margin-left: 20px;
+#home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  color: white;
+  z-index: 1;
+  position: relative;
 }
 
-header .logo h1 {
-  font-size: 2rem;
+/* Centered Welcome Text */
+.welcome-text h1 {
+  font-family: 'Jomhuria', sans-serif;
+  font-size: 5vw; /* Responsive font size */
+  color: #2a2222;
+  letter-spacing: 3px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
   margin: 0;
 }
 
-header nav {
-  display: inline-block;
-  float: right;
-  margin-right: 20px;
-}
-
-header nav ul {
-  list-style-type: none;
-  display: flex;
-  align-items: center;
-}
-
-header nav ul li {
-  margin: 0 20px;
-}
-
-header nav ul li a {
-  color: white;
-  text-decoration: none;
+/* Description Styling */
+.description p {
+  color: #645252;
   font-size: 1.2rem;
-  padding: 8px 16px;
-  display: inline-block;
+  margin-bottom: 20px;
 }
 
-header nav ul li a:hover {
-  background-color: rgba(0, 0, 0, 0.2); /* Adds hover effect */
-  border-radius: 5px;
-}
-
-/* Hero Section with background image */
-.hero {
-  background-image: url('donut-hero.jpg'); /* Set your image as the background */
-  background-size: cover; /* Ensure the image covers the entire section */
-  background-position: center; /* Center the image */
-  padding: 120px 20px 80px; /* Adjusted top padding to prevent overlap with the header */
-  text-align: center;
-  position: relative;
-  color: white; /* Ensure text is white for readability */
-}
-
-.hero-text {
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for text */
-  padding: 30px;
-  display: inline-block;
-  border-radius: 8px;
-}
-
-.hero-text h2 {
-  font-size: 3rem;
-  margin-bottom: 10px;
-}
-
-.hero-text p {
-  font-size: 1.5rem;
-}
-
-/* Donut Types Section */
-.donut-types {
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.donut-types h2 {
-  font-size: 2.5rem;
-  color: #333;
+/* Main Image Styling */
+.home-image {
+  width: 80%;
+  max-width: 600px;
   margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.donut-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+/* Main Navigation */
+.main-navigation {
+  display: flex;
+  justify-content: center;
   gap: 20px;
+  margin: 20px 0;
 }
 
-.donut {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.donut img {
-  width: 100%;
-  border-radius: 8px;
-}
-
-.donut h3 {
-  margin-top: 15px;
-  font-size: 1.5rem;
-  color: #ff7f50;
-}
-
-.donut p {
-  font-size: 1rem;
-  color: #555;
-}
-
-/* Footer */
-footer {
-  background-color: #333;
+button {
+  padding: 10px 20px;
+  background-color: #423737;
   color: white;
-  text-align: center;
-  padding: 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #312a2e;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .donut-grid {
-      grid-template-columns: 1fr 1fr; /* Two columns for smaller screens */
+  .welcome-text h1 {
+    font-size: 8vw; /* Adjust font size for smaller screens */
   }
 
-  .hero-text h2 {
-      font-size: 2.5rem;
+  .description p {
+    font-size: 1rem; /* Smaller font size for smaller screens */
   }
 
-  .hero-text p {
-      font-size: 1.2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  header nav ul {
-      flex-direction: column;
-      align-items: center;
+  .home-image {
+    width: 90%;
   }
 
-  header nav ul li {
-      margin: 10px 0;
+  .main-navigation {
+    flex-direction: column;
+    gap: 10px;
   }
 
-  .hero-text h2 {
-      font-size: 2rem;
-  }
-
-  .hero-text p {
-      font-size: 1rem;
-  }
-
-  .donut-grid {
-      grid-template-columns: 1fr; /* Single column for very small screens */
+  button {
+    padding: 8px 15px;
   }
 }
