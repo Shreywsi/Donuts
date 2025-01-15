@@ -106,7 +106,7 @@ img {
 .donut-image img {
     position: relative;
     z-index: 1; /* Places the image above the text */
-    width: clamp(300px, 60vw, 600px); /* Dynamically adjusts image size */
+    width: clamp(400px, 70vw, 900px); /* Dynamically adjusts image size */
     height: auto; /* Maintains aspect ratio */
 }
 
