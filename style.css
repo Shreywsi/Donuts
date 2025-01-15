@@ -89,10 +89,14 @@ body, html {
 
 /* Responsive Font Size */
 .text1, .text2, .text3, .text4 {
-    font-size: clamp(2rem, 8vw, 5rem); /* Dynamically adjusts font size */
-    line-height: 1.2; /* Adjust line-height for better spacing */
-    transition: font-size 0.3s ease-in-out;
+    font-size: clamp(4rem, 15vw, 12rem); /* Larger font size for emphasis */
+    line-height: 1.2; /* Adjust line-height */
+    font-family: 'Glass Antiqua', sans-serif; /* Optional: A stylish font for visibility */
+    text-transform: uppercase; /* Makes the text uppercase */
+    position: absolute; /* Stacks all text elements in the same space */
+    white-space: nowrap; /* Prevents wrapping */
 }
+
 
 /* Universal Image Styling */
 img {
@@ -101,7 +105,12 @@ img {
     max-height: 90%; /* Prevents overflow */
     transition: transform 1s ease, width 1s ease, height 1s ease;
 }
-
+.donut-image img {
+    position: relative;
+    z-index: 1; /* Places the image above the text */
+    width: clamp(300px, 60vw, 600px); /* Dynamically adjusts image size */
+    height: auto; /* Maintains aspect ratio */
+}
 /* Sideways Text Styling */
 .sideways-text {
     font-size: clamp(1rem, 3vw, 2rem); /* Dynamically adjusts size */
