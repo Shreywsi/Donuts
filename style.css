@@ -63,35 +63,36 @@ body, html {
     z-index: 0;
     transition: transform 1s ease;
 }
+
 /* Text Styling */
 .text1 {
-    color: #339897; 
+    color: #339897;
 }
 .text2 {
-    color: #3CAEAD; 
+    color: #3CAEAD;
     text-align: center;
-    white-space: nowrap; 
+    white-space: nowrap;
 }
 .text3 {
-    color: #4EC5C3; 
-    line-height: 1; 
+    color: #4EC5C3;
+    line-height: 1;
     text-align: center;
-    white-space: nowrap; 
+    white-space: nowrap;
 }
 .text4 {
-    color: #64D4D2; 
-    line-height: 1; 
+    color: #64D4D2;
+    line-height: 1;
     justify-content: center;
     text-align: center;
-    white-space: nowrap; 
+    white-space: nowrap;
 }
 
-/* Text Styling */
+/* Responsive Font Size */
 .text1, .text2, .text3, .text4 {
-    line-height: 0.3 ; 
-    font-size: 400px; 
+    font-size: clamp(2rem, 8vw, 5rem); /* Dynamically adjusts font size */
+    line-height: 1.2; /* Adjust line-height for better spacing */
+    transition: font-size 0.3s ease-in-out;
 }
-
 
 /* Universal Image Styling */
 img {
@@ -111,7 +112,6 @@ img {
 }
 
 /* Specific Page Text Styles */
-.DonutsDelights,
 .page2 .frosted-joy-text,
 .page3 .matcha-madness-text,
 .page4 .red-velvet-text,
@@ -125,30 +125,21 @@ img {
     white-space: nowrap;
     letter-spacing: 2px;
 }
-.donut-image {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1; 
-    transition: transform 1s ease, width 1s ease, height 1s ease;
-}
-.donut-image img {
-    height: 680px;
-    display: block;
-    transition: transform 1s ease, width 1s ease, height 1s ease;}
+
 /* Media Queries for Smaller Devices */
 @media (max-width: 768px) {
-    .page { padding: 0 10px; }
+    .text1, .text2, .text3, .text4 {
+        font-size: clamp(1.5rem, 6vw, 4rem); /* Adjust font size for smaller screens */
+    }
 
     .sideways-text {
-        font-size: clamp(1rem, 3vw, 1.5rem); /* Adjusts font size for smaller screens */
+        font-size: clamp(1rem, 3vw, 1.5rem); /* Adjust sideways text size */
     }
 }
 
 @media (max-width: 480px) {
     .text1, .text2, .text3, .text4 {
-        font-size: clamp(1.5rem, 4vw, 2.5rem);
+        font-size: clamp(1rem, 5vw, 3rem); /* Smaller font size for mobile */
     }
     img {
         width: clamp(150px, 70vw, 500px); /* Ensures images resize properly */
