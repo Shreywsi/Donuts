@@ -15,8 +15,8 @@ body {
 /* Container for the Drip Image */
 .image-container {
   position: relative;
-  width: 100%; /* Adjust width as needed */
-  height: 100%; /* Adjust height as needed */
+  width: 100%;
+  height: 100%;
   background-image: url('donutimages/drip.png'); /* Drip Image */
   background-position: center;
   background-size: contain; /* Ensure the image fits within the container */
@@ -25,27 +25,30 @@ body {
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 50%; /* Center the image vertically */
-  left: 50%; /* Center the image horizontally */
-  transform: translate(-50%, -50%); /* Adjust to center the image */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* Search Button Styles */
 .search-button {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: space-between;
   background: beige;
   border-radius: 25px;
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 1rem 2rem;
+  width: 30vw; /* Scalable width */
+  max-width: 400px; /* Limit width on larger screens */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #333;
   font-weight: bold;
   cursor: pointer;
-  transition: transform 0.2s;
+  transition: transform 0.2s ease-in-out;
   border: none;
   outline: none;
-  text-decoration: none;
-  color: #333;
 }
 
 .search-button:hover {
@@ -60,12 +63,22 @@ body {
 
 /* Target Page (Initially hidden) */
 .target-page {
-  display: none; /* Hide initially */
-  background-color: pink; /* Set pink background for target page */
-  text-align: center;
-  padding: 50px;
+  background-image: url('donutimages/homepage.png'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  height: 100vh;
+  width: 100vw;
+  display: none; /* Initially hide the target page */
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  overflow: hidden;
 }
 
+/* Target Page Content */
 .target-page h1 {
   color: white;
   font-size: 24px;
