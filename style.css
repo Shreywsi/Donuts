@@ -1,4 +1,4 @@
-/* Reset some default styles */
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
@@ -9,100 +9,170 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   color: #333;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
-/* Header Styling */
+/* Header */
 header {
-  text-align: center;
-  padding: 20px;
-  background-color: #ffcc00;
+  background-color: #ff7f50;
   color: white;
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Keeps the header above all other content */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a shadow for separation */
 }
 
-header h1 {
+header .logo {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+header .logo h1 {
   font-size: 2rem;
+  margin: 0;
 }
 
-/* Homepage Image */
-.homepage-image {
+header nav {
+  display: inline-block;
+  float: right;
+  margin-right: 20px;
+}
+
+header nav ul {
+  list-style-type: none;
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 60vh; /* Adjust based on your needs */
 }
 
-.homepage-image img {
-  max-width: 100%;
-  height: auto;
+header nav ul li {
+  margin: 0 20px;
 }
 
-/* Description Section */
-.description {
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 8px 16px;
+  display: inline-block;
+}
+
+header nav ul li a:hover {
+  background-color: rgba(0, 0, 0, 0.2); /* Adds hover effect */
+  border-radius: 5px;
+}
+
+/* Hero Section with background image */
+.hero {
+  background-image: url('donut-hero.jpg'); /* Set your image as the background */
+  background-size: cover; /* Ensure the image covers the entire section */
+  background-position: center; /* Center the image */
+  padding: 120px 20px 80px; /* Adjusted top padding to prevent overlap with the header */
   text-align: center;
+  position: relative;
+  color: white; /* Ensure text is white for readability */
+}
+
+.hero-text {
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for text */
+  padding: 30px;
+  display: inline-block;
+  border-radius: 8px;
+}
+
+.hero-text h2 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 1.5rem;
+}
+
+/* Donut Types Section */
+.donut-types {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.donut-types h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.donut-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.donut {
+  background-color: white;
   padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.description h2 {
-  font-size: 1.8rem;
-  color: #ff6600;
+.donut img {
+  width: 100%;
+  border-radius: 8px;
 }
 
-.description p {
-  font-size: 1.1rem;
-  margin-top: 10px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+.donut h3 {
+  margin-top: 15px;
+  font-size: 1.5rem;
+  color: #ff7f50;
 }
 
-/* Footer Styling */
+.donut p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Footer */
 footer {
-  text-align: center;
-  padding: 10px;
   background-color: #333;
   color: white;
+  text-align: center;
+  padding: 20px;
 }
 
-/* Responsive Styles */
-
-/* For tablets and smaller screens */
+/* Responsive Design */
 @media (max-width: 768px) {
-  header h1 {
-      font-size: 1.8rem;
+  .donut-grid {
+      grid-template-columns: 1fr 1fr; /* Two columns for smaller screens */
   }
 
-  .description h2 {
-      font-size: 1.5rem;
+  .hero-text h2 {
+      font-size: 2.5rem;
   }
 
-  .description p {
+  .hero-text p {
+      font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header nav ul {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  header nav ul li {
+      margin: 10px 0;
+  }
+
+  .hero-text h2 {
+      font-size: 2rem;
+  }
+
+  .hero-text p {
       font-size: 1rem;
   }
 
-  .homepage-image {
-      height: 50vh; /* Adjusted for smaller screens */
-  }
-}
-
-/* For mobile screens */
-@media (max-width: 480px) {
-  header h1 {
-      font-size: 1.5rem;
-  }
-
-  .description h2 {
-      font-size: 1.3rem;
-  }
-
-  .description p {
-      font-size: 0.95rem;
-  }
-
-  .homepage-image {
-      height: 45vh; /* Adjusted for mobile screens */
+  .donut-grid {
+      grid-template-columns: 1fr; /* Single column for very small screens */
   }
 }
