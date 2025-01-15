@@ -1,156 +1,108 @@
-/* Global Styling */
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: 'Jomhuria', sans-serif;
-    scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Pages */
-.page {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    scroll-snap-align: start;
-    position: relative;
-    padding: 0 20px;
-    box-sizing: border-box;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-/* Backgrounds */
-.page1 {
-    background: radial-gradient(circle, #FFFF00, #F4C430);
-}
-.page2 {
-    background: radial-gradient(circle, #FFC0CB, #FF1493);
-}
-.page3 {
-    background: radial-gradient(circle, #8BAA54, #4C6535);
-}
-.page4 {
-    background: radial-gradient(circle, #FF0000, #800000);
-}
-.page5 {
-    background: radial-gradient(circle, #6E2121, #654321);
+/* Header Styling */
+header {
+  text-align: center;
+  padding: 20px;
+  background-color: #ffcc00;
+  color: white;
 }
 
-/* Donut Container */
-.donut-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-/* Text Styling */
-.text1 {
-    color: #339897;
-}
-.text2 {
-    color: #3CAEAD;
-    text-align: center;
-    white-space: nowrap;
-}
-.text3 {
-    color: #4EC5C3;
-    line-height: 1;
-    text-align: center;
-    white-space: nowrap;
-}
-.text4 {
-    color: #64D4D2;
-    line-height: 1;
-    justify-content: center;
-    text-align: center;
-    white-space: nowrap;
+header h1 {
+  font-size: 2rem;
 }
 
-/* Responsive Font Size */
-.DonutsDelights {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    z-index: 0; /* Ensures the text is behind the image */
-    transition: transform 1s ease;
+/* Homepage Image */
+.homepage-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh; /* Adjust based on your needs */
 }
 
-.text1, .text2, .text3, .text4 {
-    font-size: clamp(6rem, 20vw, 18rem);
-    line-height: 1.2;
-    font-family: 'Glass Antiqua', sans-serif;
-    text-transform: uppercase;
-    white-space: nowrap;
-    font-weight: 700;
+.homepage-image img {
+  max-width: 100%;
+  height: auto;
 }
 
-/* Universal Image Styling */
-img {
-    width: clamp(300px, 60vw, 700px); /* Dynamically scales with viewport width/height */
-    height: auto; /* Maintains aspect ratio */
-    max-height: 90%; /* Prevents overflow */
-    transition: transform 1s ease, width 1s ease, height 1s ease;
-}
-.donut-image img {
-    position: relative;
-    z-index: 1; /* Places the image above the text */
-    width: clamp(400px, 70vw, 900px); /* Dynamically adjusts image size */
-    height: auto; /* Maintains aspect ratio */
+/* Description Section */
+.description {
+  text-align: center;
+  padding: 20px;
 }
 
-/* Sideways Text Styling */
-.sideways-text {
-    font-size: clamp(1rem, 3vw, 2rem); /* Dynamically adjusts size */
-    color: white;
-    transform: rotate(-90deg);
-    margin-top: 1rem;
-    text-align: center;
+.description h2 {
+  font-size: 1.8rem;
+  color: #ff6600;
 }
 
-/* Specific Page Text Styles */
-.page2 .frosted-joy-text,
-.page3 .matcha-madness-text,
-.page4 .red-velvet-text,
-.page5 .choco-delight-text {
-    position: absolute;
-    top: 50%;
-    left: 10%;
-    transform: translate(-50%, -50%) rotate(-90deg);
-    font-size: clamp(1.5rem, 5vw, 4rem);
-    color: white;
-    white-space: nowrap;
-    letter-spacing: 2px;
+.description p {
+  font-size: 1.1rem;
+  margin-top: 10px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Media Queries for Smaller Devices */
+/* Footer Styling */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+}
+
+/* Responsive Styles */
+
+/* For tablets and smaller screens */
 @media (max-width: 768px) {
-    .text1, .text2, .text3, .text4 {
-        font-size: clamp(3rem, 10vw, 8rem); /* Adjust font size for smaller screens */
-    }
+  header h1 {
+      font-size: 1.8rem;
+  }
 
-    .sideways-text {
-        font-size: clamp(1rem, 3vw, 1.5rem); /* Adjust sideways text size */
-    }
+  .description h2 {
+      font-size: 1.5rem;
+  }
+
+  .description p {
+      font-size: 1rem;
+  }
+
+  .homepage-image {
+      height: 50vh; /* Adjusted for smaller screens */
+  }
 }
 
+/* For mobile screens */
 @media (max-width: 480px) {
-    .text1, .text2, .text3, .text4 {
-        font-size: clamp(2rem, 8vw, 6rem); /* Smaller font size for mobile */
-    }
-    img {
-        width: clamp(150px, 70vw, 500px); /* Ensures images resize properly */
-    }
+  header h1 {
+      font-size: 1.5rem;
+  }
+
+  .description h2 {
+      font-size: 1.3rem;
+  }
+
+  .description p {
+      font-size: 0.95rem;
+  }
+
+  .homepage-image {
+      height: 45vh; /* Adjusted for mobile screens */
+  }
 }
