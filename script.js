@@ -7,13 +7,11 @@ window.addEventListener('load', () => {
   const airDropAudio = new Audio('sounds/apple_airdrop.mp3'); // Path to AirDrop sound
   const clickAudio = new Audio('sounds/clicksound.wav'); // Path to click sound
 
-  // Trigger AirDrop image and sound after a delay
   setTimeout(() => {
     airDropImage.style.opacity = '1'; // Make AirDrop image visible
     airDropImage.classList.add('animate-airdrop');
-    airDropAudio.play(); // Play AirDrop sound
-  }, 3000); // Delay of 3 seconds
-
+    
+  })
   // Show target page with circular transition
   window.showTargetPage = () => {
     imageContainer.style.display = 'none'; // Hide the main content
