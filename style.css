@@ -1,113 +1,89 @@
-/* Global Styling */
+/* General Body Styles for Both Pages */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #dddbd4;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: hidden;
-}
-
-/* Home Page */
-#homepage {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('donutimages/homepage.png');
-  background-position: center center; /* Centers the image */
-  background-repeat: no-repeat; /* Prevents the image from repeating */
-  transform: scale(2.5);
-  z-index: -1;
-}
-
-#home {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  font-family: Arial, sans-serif;
   height: 100vh;
-  text-align: center;
-  color: white;
-  z-index: 1;
-  position: relative;
-}
-
-/* Centered Welcome Text */
-.welcome-text h1 {
-  font-family: 'Jomhuria', sans-serif;
-  font-size: 5vw; /* Responsive font size */
-  color: #2a2222;
-  letter-spacing: 3px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  margin: 0;
-}
-
-/* Description Styling */
-.description p {
-  color: #645252;
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-}
-
-/* Main Image Styling */
-.home-image {
-  width: 80%;
-  max-width: 600px;
-  margin-bottom: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Main Navigation */
-.main-navigation {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  margin: 20px 0;
+  align-items: center;
+  position: relative;
+  background-color: #fcd02f; /* Fallback background color */
+  overflow: hidden; /* Prevent scrolling */
 }
 
+/* Container for the Drip Image */
+.image-container {
+  position: relative;
+  width: 100%; /* Adjust width as needed */
+  height: 100%; /* Adjust height as needed */
+  background-image: url('donutimages/drip.png'); /* Drip Image */
+  background-position: center;
+  background-size: contain; /* Ensure the image fits within the container */
+  background-repeat: no-repeat; /* Avoid repeating the image */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%; /* Center the image vertically */
+  left: 50%; /* Center the image horizontally */
+  transform: translate(-50%, -50%); /* Adjust to center the image */
+}
+
+/* Search Button Styles */
+.search-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  background: beige;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  color: #333;
+}
+
+.search-button:hover {
+  transform: scale(1.05);
+}
+
+.search-button img {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+}
+
+/* Target Page (Initially hidden) */
+.target-page {
+  display: none; /* Hide initially */
+  background-color: pink; /* Set pink background for target page */
+  text-align: center;
+  padding: 50px;
+}
+
+.target-page h1 {
+  color: white;
+  font-size: 24px;
+}
+
+/* Button Styles for "Go Back" */
 button {
   padding: 10px 20px;
-  background-color: #423737;
-  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: white;
   border: none;
   border-radius: 5px;
-  font-size: 16px;
   cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #312a2e;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .welcome-text h1 {
-    font-size: 8vw; /* Adjust font size for smaller screens */
-  }
-
-  .description p {
-    font-size: 1rem; /* Smaller font size for smaller screens */
-  }
-
-  .home-image {
-    width: 90%;
-  }
-
-  .main-navigation {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  button {
-    padding: 8px 15px;
-  }
+  background-color: #f0f0f0;
 }

@@ -1,30 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donut Delight</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Jomhuria&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Button</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script> <!-- Link to external JS file -->
 </head>
 <body>
-    <!-- Home Page -->
-    <div id="home">
-      <img src="donutimages/homepage.png" alt="Delicious Donuts" class="home-image">
-        <div id="homepage"></div>
-        <h1>Welcome to Donut Delight!</h1>
-        <div class="description">
-            <p>Indulge in our sweet, fresh donuts! Taste the happiness in every bite.</p>
-        </div>
-        <!-- Adding an image -->
-        
-        <div class="main-navigation">
-            <button>Menu</button>
-            <button>About Us</button>
-            <button>Contact</button>
-        </div>
-    </div>
+  <!-- Image Container -->
+  <div class="image-container">
+    <!-- Search Button -->
+    <a href="javascript:void(0);" class="search-button" onclick="showTargetPage(); playClickSound()">
+      <span>Where can I get the best donut in town?</span>
+      <img src="https://cdn-icons-png.flaticon.com/512/622/622669.png" alt="Search Icon">
+    </a>
+  </div>
 
-    <script src="script.js"></script>
+  <!-- Target Page (Hidden by Default) -->
+  <div class="target-page">
+    <h1>Welcome to the Donut Paradise!</h1>
+    <button onclick="goBack()">Go Back</button>
+  </div>
 </body>
 </html>
