@@ -1,4 +1,5 @@
 
+
 /* General Body Styles for Both Pages */
 body {
     margin: 0;
@@ -535,7 +536,171 @@ body, html {
         width: clamp(150px, 70vw, 500px); /* Ensures images resize properly */
     }
 }
+/* For the order-page background */
+#order-page {
+    background-color: #d7868e;
+    position: relative;
+    z-index: -1;
+    min-height: 100vh; /* Ensure the container takes at least full viewport height */
+    padding: 1rem; /* Add some padding for smaller screens */
+}
 
-  
-  
-  
+/* Styling the form */
+.customization-form {
+    padding: 2rem;
+    border-radius: 10px;
+    background-color: beige;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    width: 90%; /* Make the width relative to the viewport */
+    max-width: 500px; /* Ensure it doesn't get too wide */
+    margin: 2rem auto; /* Centers the form on the page */
+    position: relative;
+    z-index: 2;
+}
+
+/* Styling the heading */
+.customization-form h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #444;
+    line-height: 1.2;
+}
+
+/* Form Section */
+.form-section {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Make the "Choose your icing" label bold */
+.form-section label {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* Radio buttons and labels on the same line */
+.form-section input[type="radio"],
+.form-section label {
+    display: inline-block; /* Display inline for both the radio buttons and labels */
+    margin-right: 10px; /* Space between radio buttons */
+    vertical-align: middle; /* Align the radio buttons and labels properly */
+}
+
+.form-section input[type="radio"] {
+    margin-right: 5px; /* Small gap between radio button and label */
+}
+
+.form-section label[for="icing"] {
+    font-weight: bold; /* Make the "Choose your icing" label bold */
+}
+
+/* Styling for the image in the bottom-left corner */
+#order-page img {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 10vw; /* Make the image width responsive */
+    max-width: 100px; /* Limit max size */
+    z-index: 1; /* Ensure the image is in front of the background */
+}
+
+/* Submit Button */
+.submit-btn {
+    display: block;
+    width: 100%;
+    color: #fff;
+    background-color: #ff5e5e;
+    padding: 1rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.submit-btn:hover {
+    background-color: #ff9090;
+}
+/* Go Back Button */
+.go-back-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.go-back-btn:hover {
+    background-color: #666;
+}
+/* Media Queries for Responsiveness */
+
+/* For mobile devices (max-width: 600px) */
+@media (max-width: 600px) {
+    .customization-form {
+        padding: 1rem; /* Less padding on mobile */
+        width: 90%; /* Allow the form to take more width */
+    }
+
+    .customization-form h1 {
+        font-size: 1.8rem; /* Smaller heading on mobile */
+    }
+
+    .form-section label {
+        font-size: 1rem; /* Adjust label font size */
+    }
+
+    .submit-btn {
+        font-size: 1rem; /* Adjust button font size */
+        padding: 0.8rem; /* Adjust padding on button */
+    }
+
+    #order-page img {
+        width: 20vw; /* Make image smaller on mobile */
+        max-width: 80px;
+    }
+}
+
+/* For tablets (max-width: 768px) */
+@media (max-width: 768px) {
+    .customization-form {
+        width: 85%; /* Form takes 85% of the screen width */
+    }
+
+    .customization-form h1 {
+        font-size: 2.2rem; /* Slightly smaller heading for tablet */
+    }
+
+    .form-section label {
+        font-size: 1.05rem; /* Adjust label font size */
+    }
+
+    .submit-btn {
+        font-size: 1.1rem; /* Adjust button font size */
+    }
+}
+
+/* For large screens (min-width: 1024px) */
+@media (min-width: 1024px) {
+    #order-page {
+        padding: 2rem; /* Add more padding for larger screens */
+    }
+
+    .customization-form {
+        width: 50%; /* Form takes 50% of the screen width on large screens */
+    }
+
+    .customization-form h1 {
+        font-size: 2.8rem; /* Increase heading size */
+    }
+}

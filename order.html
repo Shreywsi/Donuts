@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customize Your Donut</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="order-page">
+
+  <!-- Header Section -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="speciality.html" class="specialty-link" onclick="showSpecialtyPage()">Our Speciality</a></li>
+        <li><a href="order.html" class="customize-order" onclick="showOrderPage()">Order Online</a></li>
+        <li><a href="#about">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Customization Form -->
+  <form id="donutForm" class="customization-form">
+    <h1>Customize Your Donut</h1>
+    <!-- Toppings Section -->
+    <div class="form-section">
+      <label for="toppings" style="font-weight: bold;">Choose your toppings:</label>
+      <div class="toppings">
+        <label><input type="checkbox" name="toppings" value="Sprinkles"> Sprinkles</label>
+        <label><input type="checkbox" name="toppings" value="Chocolate Chips"> Chocolate Chips</label>
+        <label><input type="checkbox" name="toppings" value="Nuts"> Nuts</label>
+        <label><input type="checkbox" name="toppings" value="Candy"> Candy</label>
+      </div>
+    </div>
+
+    <!-- Icing Section -->
+    <div class="form-section">
+        <label for="icing" style="font-weight: bold;">Choose your icing:</label><br>
+        <input type="radio" id="chocolate" name="icing" value="Chocolate" required> <label for="chocolate">Chocolate</label>
+        <input type="radio" id="vanilla" name="icing" value="Vanilla"> <label for="vanilla">Vanilla</label>
+        <input type="radio" id="strawberry" name="icing" value="Strawberry"> <label for="strawberry">Strawberry</label>
+      </div>
+      
+
+    <!-- Size Section -->
+    <div class="form-section">
+      <label for="size" style="font-weight: bold;">Choose your donut size:</label><br>
+      <select id="size" name="size" required>
+        <option value="Small">Small</option>
+        <option value="Medium">Medium</option>
+        <option value="Large">Large</option>
+      </select>
+    </div>
+
+    <!-- Custom Name Section -->
+    <div class="form-section">
+      <label for="name"style="font-weight: bold;">Enter a name or message for your donut:</label>
+      <input type="text" id="name" name="name" placeholder="e.g. Birthday Donut" />
+    </div>
+
+    <!-- Submit Button -->
+    <div class="form-section">
+      <button type="submit" class="submit-btn">Customize Donut</button>
+    </div>
+    <div class="form-section">
+        <button type="button" onclick="goBack()">Go Back</button>
+      </div>
+    </form>
+  <script src="script.js"></script>
+
+</body>
+</html>

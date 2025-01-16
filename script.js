@@ -1,3 +1,4 @@
+
 window.addEventListener('load', () => {
   // DOM elements
   const airDropImage = document.querySelector('.AirDrop');
@@ -88,4 +89,28 @@ function showSpecialtyPage() {
 
   // Optionally, reset or scroll to the top of the specialty page
   specialtyPage.scrollIntoView({ behavior: 'smooth' });
+}
+// Function to handle form submission
+document.getElementById('donutForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const form = new FormData(event.target);
+  const selectedToppings = form.getAll('toppings').join(', ');
+  const icing = form.get('icing');
+  const size = form.get('size');
+  const name = form.get('name');
+
+  alert(`
+    Your Custom Donut:
+    - Toppings: ${selectedToppings}
+    - Icing: ${icing}
+    - Size: ${size}
+    - Special Message: ${name || 'None'}
+  `);
+});
+const customizeButton = document.querySelector('.submit-btn');
+if (customizeButton) {
+  customizeButton.addEventListener('click', () => {
+    clickAudio.play(); // Play click sound
+  });
 }
