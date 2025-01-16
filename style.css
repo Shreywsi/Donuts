@@ -1,424 +1,541 @@
 
 /* General Body Styles for Both Pages */
 body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  background-color: #fcd02f; /* Fallback background color */
-  overflow: hidden; /* Prevent scrolling */
-}
-
-/* Container for the Drip Image */
-.image-container {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: url('donutimages/drip.png') center/contain no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
-}
-
-/* Search Button Styles */
-.search-button {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: beige;
-  border-radius: 25px;
-  padding: 1rem 2rem;
-  width: 30vw;
-  max-width: 400px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  text-decoration: none;
-  font-size: 1.2rem;
-  color: #333;
-  font-weight: bold;
-  cursor: pointer;
-  transition: transform 0.2s ease-in-out;
-  border: none;
-}
-
-.search-button:hover {
-  transform: scale(1.05);
-}
-
-.search-button img {
-  width: 20px;
-  height: 20px;
-  margin-left: 10px;
-}
-
-/* Target Page */
-.target-page {
-  background: url('donutimages/homepage.png') center/cover fixed;
-  height: 100vh;
-  width: 100vw;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  clip-path: circle(0% at 50% 50%);
-  transition: clip-path 1.5s ease-out;
-  position: relative;
-}
-
-/* Header Section */
-header {
-  position: absolute;
-  top: 20px;
-  width: 90%;
-  max-width: 1200px;
-  border-radius: 20px;
-  padding: 10px 0;
-  background-color: beige;
-  text-align: right;
-  margin: 0 5%;
-  z-index: 1;
-  box-sizing: border-box;
-}
-
-header nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-}
-
-header nav ul li {
-  margin: 0 20px;
-}
-
-header nav ul li a {
-  color: rgb(66, 31, 7);
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-header nav ul li a:hover {
-  color: #9bc7bf;
-}
-
-/* AirDrop Image Styles */
-.AirDrop {
-  position: absolute;
-  right: 3%;
-  top: 10%;
-  width: 30vw;
-  max-width: 350px;
-  height: auto;
-  border-radius: 20px;
-  z-index: 2;
-  opacity: 0;
-  animation: slideIn 1s forwards;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-}
-
-@keyframes slideIn {
-  0% {
-    transform: translateX(100%);
-    opacity: 0;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: #fcd02f; /* Fallback background color */
+    overflow: hidden; /* Prevent scrolling */
   }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
+  
+  /* Container for the Drip Image */
+  .image-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('donutimages/drip.png') center/contain no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
   }
-}
-
-/* Target Page Content */
-.target-page button {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  background-color: beige;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.target-page button:hover {
-  background-color: #f0f0f0;
-}
-
-/* Media Queries */
-@media (max-width: 768px) {
+  
+  /* Search Button Styles */
   .search-button {
-    width: 80vw;
-    font-size: 1rem;
-  }
-
-  header nav ul li {
-    margin: 0 15px;
-  }
-
-  header nav ul li a {
-    font-size: 16px;
-  }
-
-  .AirDrop {
-    width: 40vw;
-    right: 5%;
-    top: 20%;
-  }
-
-  .target-page button {
-    padding: 8px 16px;
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 480px) {
-  .search-button {
-    width: 90vw;
-    font-size: 0.9rem;
-  }
-
-  header nav ul li {
-    margin: 0 10px;
-  }
-
-  header nav ul li a {
-    font-size: 14px;
-  }
-
-  .AirDrop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: beige;
+    border-radius: 25px;
+    padding: 1rem 2rem;
     width: 30vw;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    border: none;
+  }
+  
+  .search-button:hover {
+    transform: scale(1.05);
+  }
+  
+  .search-button img {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+  }
+  
+  /* Target Page */
+  .target-page {
+    background: url('donutimages/homepage.png') center/cover fixed;
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    clip-path: circle(0% at 50% 50%);
+    transition: clip-path 1.5s ease-out;
+    position: relative;
+  }
+  
+  /* Header Section */
+  header {
+    position: absolute;
+    top: 20px;
+    width: 90%;
+    max-width: 1200px;
+    border-radius: 20px;
+    padding: 10px 0;
+    background-color: beige;
+    text-align: right;
+    margin: 0 5%;
+    z-index: 1;
+    box-sizing: border-box;
+  }
+  
+  header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  header nav ul li {
+    margin: 0 20px;
+  }
+  
+  header nav ul li a {
+    color: rgb(66, 31, 7);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  header nav ul li a:hover {
+    color: #9bc7bf;
+  }
+  
+  /* AirDrop Image Styles */
+  .AirDrop {
+    position: absolute;
     right: 3%;
     top: 10%;
+    width: 30vw;
+    max-width: 350px;
+    height: auto;
+    border-radius: 20px;
+    z-index: 2;
+    opacity: 0;
+    animation: slideIn 1s forwards;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
   }
-
+  
+  @keyframes slideIn {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Target Page Content */
   .target-page button {
-    padding: 6px 12px;
-    font-size: 12px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: beige;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
   }
-}
-/* Auth Container */
-.auth-container {
-  position: absolute;
-  left: 3%;
-  top: 20%;
-  width: 25%;
-  max-width: 650px;
-  background-color: beige;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 2;
-}
-
-.auth-container h2 {
-  font-size: 1.5rem;
-  color: #5b5959;
-  margin-bottom: 15px;
-  text-align: center;
-}
-
-.auth-container form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.auth-container label {
-  font-size: 0.9rem;
-  color: #333;
-}
-
-.auth-container input {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1rem;
-}
-
-.auth-container button {
-  padding: 10px;
-  background-color: #6d311a;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  color: #fff;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.auth-container button:hover {
-  background-color: #9bc7bf;
-}
-
-.auth-container p {
-  font-size: 0.9rem;
-  color: #555;
-  text-align: center;
-}
-
-.auth-container p a {
-  color: #6d311a;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.auth-container p a:hover {
-  text-decoration: underline;
-}
-
-/* Adjustments for responsiveness */
-@media (max-width: 768px) {
+  
+  .target-page button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .search-button {
+      width: 80vw;
+      font-size: 1rem;
+    }
+  
+    header nav ul li {
+      margin: 0 15px;
+    }
+  
+    header nav ul li a {
+      font-size: 16px;
+    }
+  
+    .AirDrop {
+      width: 40vw;
+      right: 5%;
+      top: 20%;
+    }
+  
+    .target-page button {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .search-button {
+      width: 90vw;
+      font-size: 0.9rem;
+    }
+  
+    header nav ul li {
+      margin: 0 10px;
+    }
+  
+    header nav ul li a {
+      font-size: 14px;
+    }
+  
+    .AirDrop {
+      width: 30vw;
+      right: 3%;
+      top: 10%;
+    }
+  
+    .target-page button {
+      padding: 6px 12px;
+      font-size: 12px;
+    }
+  }
+  /* Auth Container */
   .auth-container {
-    width: 80%;
-    left: 10%;
-    top: 25%;
-  }
-}
-/* Modal Styles */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%; /* Full screen width */
-  height: 100%; /* Full screen height */
-  background-color: rgba(0, 0, 0, 0.8); /* Darker semi-transparent background */
-  z-index: 1000; /* Place above other elements */
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-content {
-  width: 80%; /* Set modal content width to occupy more space */
-  max-width: 500px; /* Restrict maximum width */
-  height: 70%; /* Increase height */
-  max-height: 50%; /* Restrict maximum height */
-  background-color: #edcbd3; /* Background of modal content */
-  padding: 40px; /* Add some padding */
-  border-radius: 40px; /* Smooth rounded corners */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Add a shadow for emphasis */
-  position: relative; /* Required for absolute positioning of close button */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; /* Align content at the top */
-  align-items: center; /* Center content horizontally */
-}
-
-.modal-content h2 {
-  margin-bottom: 45px;
-  font-size: 2.5rem;
-  color: #333;
-}
-
-.modal-content label {
-  display: block;
-  margin: 10px 0 5px;
-  color: #444;
-  font-size: 0.9rem;
-}
-
-.modal-content input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-bottom: 15px;
-  font-size: 1rem;
-}
-
-.modal-content button {
-  width: 50%;
-  padding: 10px;
-  background-color: #3b1b0f;
-  border-color: #f0f0f0;
-  border-radius: 15px;
-  font-size: 1rem;
-  color: #fff;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  position: absolute; /* Positioning it in the center */
-  bottom: 55px;
-  left: 50%; /* Center the button horizontally */
-  transform: translateX(-50%); /* Adjust for exact centering */
-}
-
-.modal-content button:hover {
-  background-color: #9bc7bf;
-}
-
-.close-btn {
-  position: absolute;
-  top: 15px;
-  right: 25px;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: #333;
-  transition: color 0.3s ease;
-}
-
-.close-btn:hover {
-  color: #9bc7bf;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .modal-content {
-    width: 90%; /* Make modal content wider on smaller screens */
+    position: absolute;
+    left: 3%;
+    top: 20%;
+    width: 25%;
+    max-width: 650px;
+    background-color: beige;
     padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 2;
   }
-
+  
+  .auth-container h2 {
+    font-size: 1.5rem;
+    color: #5b5959;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .auth-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .auth-container label {
+    font-size: 0.9rem;
+    color: #333;
+  }
+  
+  .auth-container input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .auth-container button {
+    padding: 10px;
+    background-color: #6d311a;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .auth-container button:hover {
+    background-color: #9bc7bf;
+  }
+  
+  .auth-container p {
+    font-size: 0.9rem;
+    color: #555;
+    text-align: center;
+  }
+  
+  .auth-container p a {
+    color: #6d311a;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .auth-container p a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Adjustments for responsiveness */
+  @media (max-width: 768px) {
+    .auth-container {
+      width: 80%;
+      left: 10%;
+      top: 25%;
+    }
+  }
+  /* Modal Styles */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Full screen width */
+    height: 100%; /* Full screen height */
+    background-color: rgba(0, 0, 0, 0.8); /* Darker semi-transparent background */
+    z-index: 1000; /* Place above other elements */
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    width: 80%; /* Set modal content width to occupy more space */
+    max-width: 500px; /* Restrict maximum width */
+    height: 70%; /* Increase height */
+    max-height: 50%; /* Restrict maximum height */
+    background-color: #edcbd3; /* Background of modal content */
+    padding: 40px; /* Add some padding */
+    border-radius: 40px; /* Smooth rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Add a shadow for emphasis */
+    position: relative; /* Required for absolute positioning of close button */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content at the top */
+    align-items: center; /* Center content horizontally */
+  }
+  
   .modal-content h2 {
-    font-size: 2rem; /* Adjust font size for smaller screens */
-    margin-bottom: 20px;
+    margin-bottom: 45px;
+    font-size: 2.5rem;
+    color: #333;
   }
-
-  .modal-content button {
-    width: 70%; /* Increase button width on smaller screens */
-    bottom: 30px; /* Adjust button position */
+  
+  .modal-content label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #444;
+    font-size: 0.9rem;
   }
-
+  
   .modal-content input {
-    font-size: 0.9rem; /* Slightly smaller input font size */
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 1rem;
   }
-
+  
+  .modal-content button {
+    width: 50%;
+    padding: 10px;
+    background-color: #3b1b0f;
+    border-color: #f0f0f0;
+    border-radius: 15px;
+    font-size: 1rem;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute; /* Positioning it in the center */
+    bottom: 55px;
+    left: 50%; /* Center the button horizontally */
+    transform: translateX(-50%); /* Adjust for exact centering */
+  }
+  
+  .modal-content button:hover {
+    background-color: #9bc7bf;
+  }
+  
   .close-btn {
-    top: 10px;
-    right: 10px; /* Adjust position for close button */
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s ease;
   }
+  
+  .close-btn:hover {
+    color: #9bc7bf;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .modal-content {
+      width: 90%; /* Make modal content wider on smaller screens */
+      padding: 20px;
+    }
+  
+    .modal-content h2 {
+      font-size: 2rem; /* Adjust font size for smaller screens */
+      margin-bottom: 20px;
+    }
+  
+    .modal-content button {
+      width: 70%; /* Increase button width on smaller screens */
+      bottom: 30px; /* Adjust button position */
+    }
+  
+    .modal-content input {
+      font-size: 0.9rem; /* Slightly smaller input font size */
+    }
+  
+    .close-btn {
+      top: 10px;
+      right: 10px; /* Adjust position for close button */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .modal-content {
+      width: 95%; /* Make modal content even wider */
+      padding: 15px;
+    }
+  
+    .modal-content h2 {
+      font-size: 1.8rem; /* Smaller font size for very small screens */
+      margin-bottom: 15px;
+    }
+  
+    .modal-content button {
+      width: 80%; /* Make the button wider */
+      bottom: 20px; /* Adjust position */
+    }
+  
+    .modal-content input {
+      font-size: 0.85rem; /* Even smaller input font size */
+    }
+  
+    .close-btn {
+      top: 5px;
+      right: 5px; /* Adjust for very small screens */
+    }
+  }
+  /* OUR SPECIALITY SECTION*/
+/* Global Styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Jomhuria', sans-serif;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+}
+
+/* Specialty Page Specific Styles */
+.speciality-page .page {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+    position: relative;
+    padding: 0 20px;
+    box-sizing: border-box;
+
+}
+/* Backgrounds for Specialty Page */
+.speciality-page .page1 {
+    background: radial-gradient(circle, #FFFF00, #F4C430)!important;
+}
+.speciality-page .page2 {
+    background: radial-gradient(circle, #FFC0CB, #FF1493)!important;
+}
+.speciality-page .page3 {
+    background: radial-gradient(circle, #8BAA54, #4C6535)!important;
+}
+.speciality-page .page4 {
+    background: radial-gradient(circle, #FF0000, #800000)!important;
+}
+.speciality-page .page5 {
+    background: radial-gradient(circle, #6E2121, #654321)!important;
+}
+
+/* Donut Container */
+/* Donut Container */
+.speciality-page .donut-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Text Styling for Specialty Page */
+.speciality-page .text1, .speciality-page .text2, .speciality-page .text3, .speciality-page .text4 {
+    line-height: 1.2;
+    font-size: clamp(2rem, 5vw, 4rem); /* Dynamically adjusts size */
+    color: #339897;
+    white-space: nowrap;
+    margin: 0.5rem 0;
+}
+
+/* Universal Image Styling for Specialty Page */
+.speciality-page img {
+    width: clamp(200px, 80vw, 90vh); /* Dynamically scales with viewport width/height */
+    height: auto; /* Maintains aspect ratio */
+    max-height: 90%; /* Prevents overflow */
+    transition: transform 1s ease, width 1s ease, height 1s ease;
+}
+
+/* Sideways Text Styling for Specialty Page */
+.speciality-page .sideways-text {
+    font-size: clamp(1rem, 3vw, 2rem); /* Dynamically adjusts size */
+    color: white;
+    transform: rotate(-90deg);
+    margin-top: 1rem;
+    text-align: center;
+}
+
+/* Specific Page Text Styles */
+.speciality-page .page2 .frosted-joy-text,
+.speciality-page .page3 .matcha-madness-text,
+.speciality-page .page4 .red-velvet-text,
+.speciality-page .page5 .choco-delight-text {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    font-size: clamp(1.5rem, 5vw, 4rem);
+    color: white;
+    white-space: nowrap;
+    letter-spacing: 2px;
+}
+
+/* Media Queries for Smaller Devices */
+@media (max-width: 768px) {
+    .speciality-page .page { padding: 0 10px; }
+
+    .speciality-page .sideways-text {
+        font-size: clamp(1rem, 3vw, 1.5rem); /* Adjusts font size for smaller screens */
+    }
 }
 
 @media (max-width: 480px) {
-  .modal-content {
-    width: 95%; /* Make modal content even wider */
-    padding: 15px;
-  }
-
-  .modal-content h2 {
-    font-size: 1.8rem; /* Smaller font size for very small screens */
-    margin-bottom: 15px;
-  }
-
-  .modal-content button {
-    width: 80%; /* Make the button wider */
-    bottom: 20px; /* Adjust position */
-  }
-
-  .modal-content input {
-    font-size: 0.85rem; /* Even smaller input font size */
-  }
-
-  .close-btn {
-    top: 5px;
-    right: 5px; /* Adjust for very small screens */
-  }
+    .speciality-page .text1, .speciality-page .text2, .speciality-page .text3, .speciality-page .text4 {
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
+    }
+    .speciality-page img {
+        width: clamp(150px, 70vw, 500px); /* Ensures images resize properly */
+    }
 }
+
+  
+  
+  

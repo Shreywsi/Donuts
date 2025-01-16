@@ -78,3 +78,14 @@ window.addEventListener('load', () => {
     }
   });
 });
+function showSpecialtyPage() {
+  // Hide the main target page
+  document.querySelector('.target-page').style.display = 'none';
+
+  // Show the specialty page
+  const specialtyPage = document.getElementById('specialty-page');
+  specialtyPage.style.display = 'block';
+
+  // Optionally, reset or scroll to the top of the specialty page
+  specialtyPage.scrollIntoView({ behavior: 'smooth' });
+}
