@@ -1,0 +1,194 @@
+/* Global Styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Jomhuria', sans-serif;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+}
+header {
+    position: absolute;
+    top: 20px;
+    left: 10%;
+    width: 80%;
+    max-width: 1200px;
+    border-radius: 20px;
+    padding: 10px 0;
+    background-color: beige;
+    text-align: center;
+    margin: 0 5%;
+    z-index: 1;
+    box-sizing: border-box;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+  }
+  
+  header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  header nav ul li {
+    margin: 0 20px;
+  }
+  
+  header nav ul li a {
+    color: rgb(66, 31, 7);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  header nav ul li a:hover {
+    color: #9bc7bf;
+  }
+/* Pages */
+.page {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+    position: relative;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Media Queries for Smaller Devices */
+@media (max-width: 768px) {
+    header {
+        width: 90%; /* Adjust header width for mobile */
+        left: 5%; /* Center the header */
+    }
+
+    header nav ul li {
+        margin: 0 15px; /* Adjust spacing between items */
+    }
+
+    header nav ul li a {
+        font-size: 1.2rem; /* Adjust font size */
+    }
+
+    .page { padding: 0 10px; }
+
+    .sideways-text {
+        font-size: clamp(1rem, 3vw, 1.5rem); /* Adjusts font size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        width: 95%; /* Slightly larger header on extra-small devices */
+        left: 2.5%; /* Adjust positioning */
+    }
+
+    header nav ul li {
+        margin: 0 10px; /* Tighter spacing */
+    }
+
+    header nav ul li a {
+        font-size: 1rem; /* Smaller font size */
+    }
+
+    .text1, .text2, .text3, .text4 {
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
+    }
+
+    img {
+        width: clamp(150px, 70vw, 500px); /* Ensures images resize properly */
+    }
+}
+.page1 {
+    background-image: url('donutimages/Donut\ Delight.png');
+    background-size: cover; /* Ensures the image covers the entire screen */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image on the screen */
+    height: 100vh; /* Ensures it takes the full viewport height */
+    width: 100%;
+}
+.page2 {
+    background: radial-gradient(circle, #FFC0CB, #FF1493);
+}
+.page3 {
+    background: radial-gradient(circle, #8BAA54, #4C6535);
+}
+.page4 {
+    background: radial-gradient(circle, #FF0000, #800000);
+}
+.page5 {
+    background: radial-gradient(circle, #6E2121, #654321);
+}
+
+/* Donut Container */
+.donut-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.DonutsDelights {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the container */
+    text-align: center; /* Centers text inside the container */
+    z-index: 0; /* Ensures it appears above other elements */
+}
+/* Universal Image Styling */
+img {
+    width: clamp(200px, 80vw, 90vh); /* Dynamically scales with viewport width/height */
+    height: auto; /* Maintains aspect ratio */
+    max-height: 90%; /* Prevents overflow */
+    transition: transform 1s ease, width 1s ease, height 1s ease;
+}
+
+/* Sideways Text Styling */
+.sideways-text {
+    font-size: clamp(1rem, 3vw, 2rem); /* Dynamically adjusts size */
+    color: white;
+    transform: rotate(-90deg);
+    margin-top: 1rem;
+    text-align: center;
+}
+
+/* Specific Page Text Styles */
+.page2 .frosted-joy-text,
+.page3 .matcha-madness-text,
+.page4 .red-velvet-text,
+.page5 .choco-delight-text {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    font-size: clamp(1.5rem, 5vw, 4rem);
+    color: white;
+    white-space: nowrap;
+    letter-spacing: 2px;
+}
+
+/* Media Queries for Smaller Devices */
+@media (max-width: 768px) {
+    .page { padding: 0 10px; }
+
+    .sideways-text {
+        font-size: clamp(1rem, 3vw, 1.5rem); /* Adjusts font size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .text1, .text2, .text3, .text4 {
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
+    }
+    img {
+        width: clamp(150px, 70vw, 500px); /* Ensures images resize properly */
+    }
+}
