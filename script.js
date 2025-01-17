@@ -91,26 +91,24 @@ function showSpecialtyPage() {
   specialtyPage.scrollIntoView({ behavior: 'smooth' });
 }
 // Function to handle form submission
-document.getElementById('donutForm').addEventListener('submit', function(event) {
-  event.preventDefault();
+window.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('donutForm');
+  if (form) {
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const selectedToppings = formData.getAll('toppings').join(', ');
+      const icing = formData.get('icing');
+      const size = formData.get('size');
+      const name = formData.get('name');
 
-  const form = new FormData(event.target);
-  const selectedToppings = form.getAll('toppings').join(', ');
-  const icing = form.get('icing');
-  const size = form.get('size');
-  const name = form.get('name');
-
-  alert(`
-    Your Custom Donut:
-    - Toppings: ${selectedToppings}
-    - Icing: ${icing}
-    - Size: ${size}
-    - Special Message: ${name || 'None'}
-  `);
+      alert(`
+        Your Custom Donut:
+        - Toppings: ${selectedToppings}
+        - Icing: ${icing}
+        - Size: ${size}
+        - Special Message: ${name || 'None'}
+      `);
+    });
+  }
 });
-const customizeButton = document.querySelector('.submit-btn');
-if (customizeButton) {
-  customizeButton.addEventListener('click', () => {
-    clickAudio.play(); // Play click sound
-  });
-}
