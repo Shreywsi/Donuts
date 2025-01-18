@@ -577,26 +577,27 @@ header nav ul li a:hover {
 }
 /*----------------------------------------------------------------------------------*/
 /* Page Background */
-/* Page Background */
 #About-page {
     background-color: #8db0c0;
-    margin: 0;
+    margin: 5px;
     padding: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     font-family: Arial, sans-serif;
+    overflow: hidden; /* Hide elements outside the screen during animation */
 }
 
 /* Container */
 .container {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 80%;
-    max-width: 1200px;
+    align-items: center;
+    justify-content: flex-start;
     position: relative;
+    opacity: 0;
+    transform: translateX(-100%); /* Start from left */
+    animation: slideLeft 1.5s forwards ease-out;
 }
 
 /* Instagram image styles */
@@ -607,22 +608,27 @@ header nav ul li a:hover {
     display: block;
     margin-right: 20px; /* Adds spacing between the image and the text */
     border-radius: 30px;
+    margin-top: -100px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 /* Text Content styles */
-.text-content {
-    max-width: 600px;
-    margin-left: 20px;
+.text-container {
+    margin-top: -100px;
+    width: 40%; /* Reserve 40% of the width for the text */
+    opacity: 0;
+    transform: translateX(100%); /* Start from right */
+    animation: slideRight 1.5s forwards ease-out;
+    padding-left: 50px; /* Add some space between the image and text */
 }
 
 /* Heart Container */
 .heart-container {
     position: absolute;
-    bottom: 10px; /* Align heart to the bottom */
-    left: 27px; /* Align heart to the left */
+    bottom: 10px;
+    left: 27px;
     font-size: 50px;
-    color: beige; /* Default gray color */
+    color: beige;
     cursor: pointer;
     transition: color 0.3s ease;
     z-index: 10;
@@ -632,7 +638,29 @@ header nav ul li a:hover {
 .heart.red {
     color: red;
 }
+/* Animation for sliding from the left */
+@keyframes slideLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
 
+/* Animation for sliding from the right */
+@keyframes slideRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
 /* Media Query for smaller screens */
 @media screen and (max-width: 768px) {
     /* Stack image and text vertically */
