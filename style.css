@@ -72,8 +72,8 @@ body {
     position: relative;
   }
   
-  /* Header Section */
-  header {
+ /* Header Section */
+header {
     position: absolute;
     top: 20px;
     width: 90%;
@@ -81,35 +81,36 @@ body {
     border-radius: 20px;
     padding: 10px 0;
     background-color: beige;
-    text-align: right;
+    text-align: center; /* Change from right to center */
     margin: 0 5%;
     z-index: 1;
     box-sizing: border-box;
-  }
-  
-  header nav ul {
+}
+
+/* Navigation */
+header nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: center;
-  }
-  
-  header nav ul li {
+    justify-content: center; /* Center the list items */
+}
+
+header nav ul li {
     margin: 0 20px;
-  }
-  
-  header nav ul li a {
+}
+
+header nav ul li a {
     color: rgb(66, 31, 7);
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
-  }
-  
-  header nav ul li a:hover {
+}
+
+header nav ul li a:hover {
     color: #9bc7bf;
-  }
-  
+}
+
   /* AirDrop Image Styles */
   .AirDrop {
     position: absolute;
@@ -575,44 +576,94 @@ body {
     }
 }
 /*----------------------------------------------------------------------------------*/
-
+/* Page Background */
 /* Page Background */
 #About-page {
-    background-color: #eb74ad;
-    margin: 5px;
+    background-color: #8db0c0;
+    margin: 0;
     padding: 60px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     height: 100vh;
     font-family: Arial, sans-serif;
 }
+
+/* Container */
 .container {
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    position: relative; /* Position context for the heart */
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 80%;
+    max-width: 1200px;
+    position: relative;
 }
+
+/* Instagram image styles */
 .ig img {
-    width: 500px; /* Adjust width as needed */
+    width: 100%; /* Make image responsive */
+    max-width: 500px; /* Limit the max width */
     height: auto; /* Maintain aspect ratio */
     display: block;
-    margin-right: 20px; /* Adds spacing between the image and the heart */
+    margin-right: 20px; /* Adds spacing between the image and the text */
     border-radius: 30px;
-    margin-top: -100px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
 }
+
+/* Text Content styles */
+.text-content {
+    max-width: 600px;
+    margin-left: 20px;
+}
+
 /* Heart Container */
 .heart-container {
     position: absolute;
-    bottom: 8px; /* Align heart to the bottom */
-    left: 30px; /* Align heart to the left */
+    bottom: 10px; /* Align heart to the bottom */
+    left: 27px; /* Align heart to the left */
     font-size: 50px;
     color: beige; /* Default gray color */
     cursor: pointer;
     transition: color 0.3s ease;
+    z-index: 10;
 }
+
 /* Style for the heart when it's red */
 .heart.red {
     color: red;
 }
 
+/* Media Query for smaller screens */
+@media screen and (max-width: 768px) {
+    /* Stack image and text vertically */
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ig img {
+        margin-top: 0;
+        max-width: 80%; /* Reduce image size for smaller screens */
+    }
+
+    .text-content {
+        max-width: 90%; /* Allow text to take up more space */
+        margin-top: 20px;
+    }
+
+    .heart-container {
+        font-size: 40px; /* Reduce heart size */
+        margin-top: 10px; /* Add space between the image and the heart */
+    }
+}
+
+/* Media Query for very small screens */
+@media screen and (max-width: 480px) {
+    .ig img {
+        max-width: 90%; /* Further reduce image size on very small screens */
+    }
+
+    .heart-container {
+        font-size: 30px; /* Smaller heart on very small screens */
+    }
+}
