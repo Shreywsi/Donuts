@@ -574,3 +574,45 @@ body {
         font-size: 2.8rem; /* Increase heading size */
     }
 }
+/*----------------------------------------------------------------------------------*/
+
+/* Page Background */
+#About-page {
+    background-color: #eb74ad;
+    margin: 5px;
+    padding: 60px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative; /* Position context for the heart */
+}
+.ig img {
+    width: 500px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    margin-right: 20px; /* Adds spacing between the image and the heart */
+    border-radius: 30px;
+    margin-top: -100px;
+}
+/* Heart Container */
+.heart-container {
+    position: absolute;
+    bottom: 8px; /* Align heart to the bottom */
+    left: 30px; /* Align heart to the left */
+    font-size: 50px;
+    color: beige; /* Default gray color */
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+/* Style for the heart when it's red */
+.heart.red {
+    color: red;
+}
+
