@@ -113,16 +113,14 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 document.addEventListener('DOMContentLoaded', () => {
-  // Get the heart element and sound element
   const heart = document.querySelector('.heart');
   const clickSound = document.getElementById('click-sound');
 
-  // Add a click event listener to the heart
   heart.addEventListener('click', () => {
-      // Toggle the red class to change the color
+  
       heart.classList.toggle('red');
 
-      // Play the click sound
+     
       clickSound.play();
   });
 });
