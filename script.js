@@ -12,13 +12,12 @@ window.addEventListener('load', () => {
   const signupModal = document.getElementById('signup-modal');
   const closeModal = document.querySelector('.close-btn');
 
-  // Show AirDrop image with animation
+ 
   setTimeout(() => {
     airDropImage.style.opacity = '1'; // Make AirDrop image visible
     airDropImage.classList.add('animate-airdrop');
   });
 
-  // Show target page with circular transition
   window.showTargetPage = () => {
     imageContainer.style.display = 'none'; // Hide the main content
     targetPage.style.display = 'flex'; // Show the target page
